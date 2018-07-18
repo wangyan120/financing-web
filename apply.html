@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0,  user-scalable=no" >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>在线申请</title>
+    <link rel="Stylesheet" type="text/css" href="css/apply.css" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/menu.css">
+   <script src="js/adapter.js"></script>
+   <script src="js/menu.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="img">  <img src="image/logo.png"><span>壹统金有限公司</span></div>
+    
+        <div class="line">
+            <p></p>
+            <p></p>
+        <span></span>    咨询热线<i>0000-12345678</i>
+        </div>
+    </div>
+    <div id="menu">
+ <ul>
+    <li ><a href="index.html">首页</a></li>
+    <li><a href="aboutme.html">关于我们</a></li>
+    <li><a href="product.html">租赁产品</a></li>
+    <li><a href="news.html">新闻中心</a></li>
+    <li><a href="partner.html">合作伙伴</a></li>
+    <li><a href="recruitment.html">招贤纳士</a></li>
+    <li><a href="apply.html">在线申请</a></li>
+    <li><a href="bbs.html">联系我们</a></li>
+         <span><b></b></span>
+       
+</ul>
+    </div>
+    <div id="banner"><p></p></div>
+    <div id="main">
+        <div id="sidebar">
+            <div id="list">
+                <div class="list-title"><p>Apply / <span>在线申请</span></p><b></b></div>
+                 <div id="open">
+
+                        <div class="navBox">
+                            <ul>
+                                <li>
+                                    <h2 class="obtain">在线申请 <i></i></h2>
+                                    <div class="secondary">
+                                            <h3>遇到问题</h3>
+                                            <h3>在线解决</h3>
+                                            <h3>媒体报道</h3>
+                                </li>
+                                <li>
+                                        <h2 class="obtain">操作步骤<i></i></h2>
+                                        <div class="secondary">
+                                            <h3>新品发布</h3>
+                                            <h3>头条新闻</h3>
+                                            <h3>厂商租赁</h3>
+                                        </div>
+                                </li>
+                               
+                                <li>
+                                        <h2 class="obtain"> 在线注册<i></i></h2>
+                                        <div class="secondary">
+                                                <h3></h3>
+                                                <h3></h3>
+                                                <h3></h3>
+                                        </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> 
+            </div>
+            <div class="list"></div>
+            <div class="service">
+                <img src="image/left-p1.png" width="40%" height="62">
+                <p>服务热线<br/>0000-12345678</p>
+               
+            </div>
+            <div class="manage">
+                    <img src="image/left-p2.png" width="40%" height="62">
+                    <p>服务产品<br/>提供专业融资租赁业务</p>
+            </div>
+            <div class="dian">
+                <img src="image/left-p3.png" width="40%" height="62">
+                <p>联系我们<br/>中国北京</p>
+               
+            </div>
+           
+        </div>
+      <div class="right">
+          <div class="top">
+              <div class="text"><span></span>当前位置&gt;<a href="index.html">首页</a>&gt;在线申请&gt;<b>常见问题</b></div>
+          </div>
+          <div class="bs-banner"></div>
+          <div class="con-text">
+            <div><label>姓名:</label><input type="text"><span>*</span></div> 
+            <div> <label>联系电话:</label><input type="tel"></div>
+           
+            <div class="Mode" >  <label>验证码:</label><input type="text" id="msg" >
+               
+<div id="check-code" style="overflow: hidden;">
+	<div class="code" id="data_code"></div>
+	
+</div>
+<script src="js/jquery.min-m.js"></script>
+<script type="text/javascript">
+	/**
+	 * 验证码
+	 * @param {Object} o 验证码长度
+	 */
+	$.fn.code_Obj = function(o) {
+		var _this = $(this);
+		var options = {
+			code_l: o.codeLength,//验证码长度
+			codeChars: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+				'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+				'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+			],
+			codeColors: ['#f44336', '#009688', '#cddc39', '#03a9f4', '#9c27b0', '#5e4444', '#9ebf9f', '#ffc8c4', '#2b4754', '#b4ced9', '#835f53', '#aa677e'],
+			code_Init: function() {
+				var code = "";
+				var codeColor = "";
+				var checkCode = _this.find("#data_code");
+				for(var i = 0; i < this.code_l; i++) {
+					var charNum = Math.floor(Math.random() * 52);
+					code += this.codeChars[charNum];
+				}
+				for(var i = 0; i < this.codeColors.length; i++) {
+					var charNum = Math.floor(Math.random() * 12);
+					codeColor = this.codeColors[charNum];
+				}
+				console.log(code);
+				if(checkCode) {
+					checkCode.css('color', codeColor);
+					checkCode.className = "code";
+					checkCode.text(code);
+					checkCode.attr('data-value', code);
+				}
+			}
+		};
+
+		options.code_Init();//初始化验证码
+		_this.find("#data_code").bind('click', function() {
+			options.code_Init();
+		});
+	};
+</script>
+<script type="text/javascript">
+	/**
+	 * 验证码
+	 * codeLength:验证码长度
+	 */
+	$('#check-code').code_Obj({
+		codeLength: 5
+	});
+</script>
+            </div>
+            <div> <label>联系邮箱:</label><input type="email"></div>
+            <div>  <label>留言内容:</label><textarea></textarea><span>*</span></div>
+          <div><label></label><input type="button" id="btn" value="立即提交" /></div>
+          </div>
+      </div>
+   
+    </div>
+
+
+
+    <div id="footer">
+        <p>友情链接：<a href="#">百度</a><a href="#">新浪</a><a href="#">阿里巴巴</a><a href="#">网易</a></p><span>&nbsp;CopyRight&copy;2018.7.16&nbsp;&nbsp;All Rights Reserved</span>
+    </div>
+</body>
+</html>
